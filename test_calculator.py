@@ -7,4 +7,8 @@ def test_empty_string():
 
 def test_single_number():
     calculator = StringCalculator()
-    assert calculator.add("1") == 1 
+    assert calculator.add("1") == 1
+
+def test_two_numbers():
+    calculator = StringCalculator()
+    assert calculator.add("1,2") == 3 
