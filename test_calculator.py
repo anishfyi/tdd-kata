@@ -11,4 +11,8 @@ def test_single_number():
 
 def test_two_numbers():
     calculator = StringCalculator()
-    assert calculator.add("1,2") == 3 
+    assert calculator.add("1,2") == 3
+
+def test_multiple_numbers():
+    calculator = StringCalculator()
+    assert calculator.add("1,2,3,4,5") == 15 
