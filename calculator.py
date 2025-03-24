@@ -12,8 +12,17 @@ class StringCalculator:
         # Replace newlines with the delimiter
         numbers = numbers.replace("\n", delimiter)
         
-        # Split by delimiter and sum
+        # Split by delimiter and convert to integers
         if delimiter in numbers:
             parts = numbers.split(delimiter)
-            return sum(int(num) for num in parts)
-        return int(numbers) 
+            nums = [int(num) for num in parts]
+        else:
+            nums = [int(numbers)]
+        
+        # Check for negative numbers
+        negatives = [num for num in nums if num < 0]
+        if negatives:
+            message = "negatives not allowed: " + ", ".join(map(str, negatives))
+            raise ValueError(message)
+        
+        return sum(nums) 
